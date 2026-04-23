@@ -94,11 +94,6 @@ S’ha utilitzat IA per:
 5. Afegir enemics  
 6. Sistema de vides i temps  
 
----
 
-## 🚀 Execució
 
-1. Clonar el repositori
-```bash
-git clone https://github.com/usuari/nom-del-repo.git
 
