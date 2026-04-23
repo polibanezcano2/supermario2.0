@@ -1,99 +1,102 @@
-﻿# 🎮 SuperMario2.0
+# 🎮 SuperMario 2.0
 
-## 📌 Descripció
-Aquest projecte consisteix en el desenvolupament d’un videojoc de plataformes 2D amb desplaçament lateral. El jugador controla un personatge que ha d’avançar pel nivell, evitar enemics i obstacles i arribar a la bandera final abans que s’esgoti el temps.
-
----
-
-## 🎯 Objectiu
-Arribar a la bandera final sense perdre totes les vides i abans que el temps arribi a zero.
+JavaScript · HTML5 Canvas · CSS3
 
 ---
 
-## 🕹️ Mecàniques del joc
+▌Què és?
 
-- Moviment lateral (esquerra / dreta)
-- Salt amb gravetat
-- Enemics amb moviment simple
-- Sistema de vides (3)
-- Temporitzador (3 minuts)
-- Sistema de punts (+100 per enemic derrotat)
+SuperMario 2.0 és un videojoc de plataformes 2D amb desplaçament lateral inspirat en els clàssics del gènere.
 
----
+El jugador ha d’arribar a la bandera final evitant enemics i obstacles dins d’un temps limitat.
 
-## 📜 Regles
-
-- Si el jugador toca un enemic → perd una vida  
-- Si cau al buit → perd una vida  
-- Si es queda sense vides → perd  
-- Si el temps arriba a 0 → perd  
-- Si arriba a la bandera → guanya  
+Aquest projecte està enfocat a implementar les mecàniques bàsiques d’un joc de plataformes amb un disseny simple i funcional.
 
 ---
 
-## 🔁 Bucle de joc
+▌Objectiu
 
-Moure → Saltar → Esquivar → Avançar → Repetir
-
----
-
-## 📊 Estats del joc
-
-| Estat        | Descripció                          |
-|-------------|------------------------------------|
-| Vides       | Comença amb 3 i disminueixen       |
-| Temps       | Compta enrere constant             |
-| Punts       | +100 per enemic derrotat           |
-| Estat       | Jugant / Guanyat / Perdut          |
+Arribar a la bandera final abans que s’acabi el temps i sense perdre totes les vides.
 
 ---
 
-## ⚠️ Limitacions
+▌Control del jugador
 
-- 1 únic nivell
-- Sense animacions complexes
-- Sense sistema de guardat
-- Sense sons avançats
-- Sense IA complexa
-- Sense power-ups
+- Moviment esquerra / dreta  
+- Salt (només des del terra)  
 
 ---
 
-## 🧠 Riscos tècnics
+▌Mecàniques principals
 
-- Col·lisions incorrectes  
-- Salt poc natural  
-- Detecció incorrecta de la meta  
-
----
-
-## 🤖 Ús d’IA
-
-S’ha utilitzat IA per:
-
-- Implementar col·lisions simples
-- Crear el sistema de salt amb gravetat
+- Moviment horitzontal  
+- Salt amb gravetat  
+- Col·lisions amb plataformes (AABB)  
+- Sistema de vides (3)  
+- Temporitzador (180 segons)  
+- Sistema de punts (+100 per enemic)  
 
 ---
 
-## 🛠️ Tecnologies
+▌Sistema d’enemics
 
-- JavaScript
-- HTML5
-- CSS3
-- Visual Studio Code
+- Moviment lineal simple  
+- Sense IA avançada  
+
+Interacció:
+- Contacte lateral → perdre vida  
+- Salt des de dalt → eliminar enemic  
 
 ---
 
-## 📅 Pla de desenvolupament
+▌Condicions del joc
 
-1. Crear base del joc  
-2. Moviment i salt  
-3. Col·lisions amb plataformes  
-4. Afegir bandera  
-5. Afegir enemics  
-6. Sistema de vides i temps  
+Derrota:
+- Vides = 0  
+- Temps = 0  
 
+Victòria:
+- Arribar a la bandera  
 
+---
 
+▌Bucle del joc
 
+Input → Update → Physics → Collisions → Render → Repeat
+
+---
+
+▌Limitacions
+
+- 1 nivell  
+- Sense animacions complexes  
+- Sense sistema de guardat  
+- Sense IA avançada  
+- Sense power-ups  
+
+---
+
+▌Tecnologies
+
+- JavaScript  
+- HTML5 Canvas  
+- CSS3  
+
+---
+
+▌Execució
+
+Obrir `index.html` en un navegador.
+
+---
+
+▌Estat del projecte
+
+🟡 En desenvolupament
+
+---
+
+▌Autor
+
+El teu nom  
+GitHub: https://github.com/polibanezcano2
