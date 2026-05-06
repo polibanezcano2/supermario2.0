@@ -2,8 +2,6 @@
 
 JavaScript · HTML5 Canvas · CSS3
 
----
-
 ▌Què és?
 
 SuperMario 2.0 és un videojoc de plataformes 2D amb desplaçament lateral inspirat en els clàssics del gènere.
@@ -98,5 +96,5 @@ Obrir `index.html` en un navegador.
 
 ▌Autor
 
-El teu nom  
+Pol
 GitHub: https://github.com/polibanezcano2
