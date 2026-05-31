@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperMario 2.0 - Plataforma Retro</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="top-bar">
+      <div>
+        <h1>SuperMario 2.0</h1>
+        <p>by Pol Ibáñez</p>
+      </div>
+
+      <section class="hud" aria-label="Información de la partida">
+        <span>Vidas: <strong id="lives">3</strong></span>
+        <span>Puntos: <strong id="score">0</strong></span>
+        <span>Monedas: <strong id="coins">0</strong></span>
+      </section>
+    </header>
+
+    <section class="game-frame">
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Zona principal del juego"></canvas>
+
+      <div id="messagePanel" class="message-panel hidden">
+        <div id="blai" class="blai hidden" aria-label="Representación simple de Blai">
+          <div class="blai-head">
+            <div class="blai-hair"></div>
+            <div class="blai-eye left"></div>
+            <div class="blai-eye right"></div>
+            <div class="blai-mouth"></div>
+          </div>
+          <div class="blai-body">
+            <span class="tie"></span>
+          </div>
+        </div>
+
+        <div id="cristian" class="cristian hidden" aria-label="Cristian diciendo que te aprueba">
+          <div class="victory-castle">
+            <div class="castle-tower left"></div>
+            <div class="castle-tower right"></div>
+            <div class="castle-door"></div>
+          </div>
+          <div class="cristian-head">
+            <div class="cristian-hair"></div>
+            <div class="cristian-glasses left"></div>
+            <div class="cristian-glasses right"></div>
+            <div class="cristian-smile"></div>
+          </div>
+          <div class="cristian-body">
+            <span class="cristian-shirt"></span>
+          </div>
+        </div>
+
+        <h2 id="messageTitle">Título</h2>
+        <p id="messageText">Mensaje</p>
+        <button id="restartButton" type="button">Reiniciar partida</button>
+      </div>
+    </section>
+
+    <footer class="controls">
+      <span>Controles:</span>
+      <kbd>A</kbd><kbd>D</kbd>
+      <span>o</span>
+      <kbd>←</kbd><kbd>→</kbd>
+      <span>para moverse,</span>
+      <kbd>Espacio</kbd>
+      <span>para saltar; mantenlo para salto grande.</span>
+    </footer>
+  </main>
+
+  <script src="script.js?v=14"></script>
+</body>
+</html>

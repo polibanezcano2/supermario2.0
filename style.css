@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #f8f3d4;
+  background:
+    linear-gradient(#4c9ce6 0 65%, #78c253 65% 100%);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.game-shell {
+  width: min(1100px, calc(100vw - 24px));
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.top-bar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #1e3a5f;
+}
+
+.top-bar h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.top-bar p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hud {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+
+.hud span {
+  padding: 8px 10px;
+  color: #fff2b8;
+  background: #263b57;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px 0 #142339;
+}
+
+.game-frame {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #ffffff;
+  box-shadow: 0 8px 0 #20374d;
+  background: #63afea;
+  aspect-ratio: 16 / 9;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  background: #63afea;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px;
+  color: #18324a;
+  background: rgba(255, 255, 255, 0.72);
+  border: 3px solid rgba(24, 50, 74, 0.35);
+}
+
+kbd {
+  min-width: 30px;
+  padding: 5px 8px;
+  color: #ffffff;
+  text-align: center;
+  background: #263b57;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 0 #142339;
+}
+
+.message-panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(12, 19, 31, 0.86);
+  text-shadow: 2px 2px 0 #000000;
+}
+
+.message-panel.hidden,
+.hidden {
+  display: none;
+}
+
+.message-panel h2 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.message-panel p {
+  margin: 0;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+button {
+  padding: 12px 18px;
+  color: #ffffff;
+  cursor: pointer;
+  background: #d94832;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px 0 #7d2318;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button:hover,
+button:focus-visible {
+  background: #f05d3f;
+}
+
+.blai {
+  width: 110px;
+  height: 150px;
+  position: relative;
+}
+
+.blai-head {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto;
+  background: #f1c293;
+  border: 4px solid #33251c;
+  border-radius: 8px;
+}
+
+.blai-hair {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  width: 58px;
+  height: 18px;
+  background: #2d2523;
+  border: 4px solid #33251c;
+}
+
+.blai-eye {
+  position: absolute;
+  top: 34px;
+  width: 10px;
+  height: 10px;
+  background: #1e1e1e;
+}
+
+.blai-eye.left {
+  left: 23px;
+}
+
+.blai-eye.right {
+  right: 23px;
+}
+
+.blai-mouth {
+  position: absolute;
+  left: 28px;
+  bottom: 20px;
+  width: 30px;
+  height: 6px;
+  background: #8d2c2c;
+}
+
+.blai-body {
+  width: 98px;
+  height: 58px;
+  margin: -2px auto 0;
+  background: #2f5f9f;
+  border: 4px solid #1e3557;
+}
+
+.tie {
+  display: block;
+  width: 18px;
+  height: 46px;
+  margin: 0 auto;
+  background: #df3333;
+  clip-path: polygon(50% 0, 100% 42%, 50% 100%, 0 42%);
+}
+
+.cristian {
+  width: 220px;
+  height: 188px;
+  position: relative;
+}
+
+.victory-castle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: 132px;
+  background: #9b8a78;
+  border: 4px solid #4c3b30;
+  box-shadow: inset 0 16px 0 #b7a591;
+}
+
+.victory-castle::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: -4px;
+  width: 150px;
+  height: 24px;
+  background:
+    linear-gradient(90deg, #4c3b30 0 18px, transparent 18px 36px, #4c3b30 36px 54px, transparent 54px 72px, #4c3b30 72px 90px, transparent 90px 108px, #4c3b30 108px 126px, transparent 126px);
+}
+
+.castle-tower {
+  position: absolute;
+  top: -44px;
+  width: 42px;
+  height: 176px;
+  background: #8d7c6d;
+  border: 4px solid #4c3b30;
+}
+
+.castle-tower.left {
+  left: -30px;
+}
+
+.castle-tower.right {
+  right: -30px;
+}
+
+.castle-tower::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -4px;
+  width: 42px;
+  height: 18px;
+  background: #4c3b30;
+}
+
+.castle-door {
+  position: absolute;
+  left: 54px;
+  bottom: -4px;
+  width: 42px;
+  height: 58px;
+  background: #31231c;
+  border: 4px solid #4c3b30;
+  border-bottom: 0;
+}
+
+.cristian-head {
+  position: relative;
+  width: 92px;
+  height: 88px;
+  margin: 0 0 0 112px;
+  background: #e8b07f;
+  border: 4px solid #2f2118;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.cristian-hair {
+  position: absolute;
+  top: -9px;
+  left: 7px;
+  width: 70px;
+  height: 22px;
+  background: #181414;
+  border: 4px solid #2f2118;
+}
+
+.cristian-glasses {
+  position: absolute;
+  top: 34px;
+  width: 22px;
+  height: 14px;
+  border: 3px solid #161616;
+  background: #d9f3ff;
+}
+
+.cristian-glasses.left {
+  left: 18px;
+}
+
+.cristian-glasses.right {
+  right: 18px;
+}
+
+.cristian-glasses.left::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: -14px;
+  width: 11px;
+  height: 3px;
+  background: #161616;
+}
+
+.cristian-smile {
+  position: absolute;
+  left: 31px;
+  bottom: 17px;
+  width: 30px;
+  height: 8px;
+  border-bottom: 4px solid #8d2c2c;
+}
+
+.cristian-body {
+  width: 106px;
+  height: 62px;
+  margin: -2px 0 0 104px;
+  background: #284c8f;
+  border: 4px solid #172a52;
+  z-index: 1;
+}
+
+.cristian-shirt {
+  display: block;
+  width: 42px;
+  height: 46px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .hud {
+    justify-content: flex-start;
+  }
+
+  .controls {
+    justify-content: flex-start;
+  }
+}
